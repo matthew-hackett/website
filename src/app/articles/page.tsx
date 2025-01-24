@@ -3,7 +3,7 @@ import Header from "@/components/core/header/Header";
 export default function Home() {
   return (
     <>
-    <p>Home page</p>
+      <p>Testing</p>
     </>
   );
 }

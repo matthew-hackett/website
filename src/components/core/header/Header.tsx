@@ -10,7 +10,7 @@ export default function Header({}: Props) {
             <div className={styles.navbar}>
                 <Link href="/" className={styles.link}><img
                     className={styles.logo}
-                    src="images/logo.svg"
+                    src="/images/logo.svg"
                 /></Link>
                 
                 <nav>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope, Nunito_Sans } from "next/font/google";
 import "@/app/globals.css";
 
+import Header from "@/components/core/header/Header";
+
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
@@ -24,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         className={`${manrope.variable} ${nunitoSans.variable} antialiased`}
       >
