@@ -2,7 +2,7 @@
 import "@/app/globals.css";
 
 import Header from "@/components/core/header/Header";
-
+import ArticleBody from "@/components/core/articlebody/ArticleBody"
 
 export default function ArticleLayout({
   children,
@@ -10,6 +10,6 @@ export default function ArticleLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <><Header></Header>{children}</>
+    <><Header></Header><ArticleBody>{children}</ArticleBody></>
   );
 }

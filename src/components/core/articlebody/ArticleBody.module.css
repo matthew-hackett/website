@@ -1,0 +1,26 @@
+.articleBody {
+    min-width: 60%;
+    max-width: 100%;
+    width: 30em;
+}
+
+.flexBox {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articleBody > p {
+    margin-bottom: 1em;
+}
+
+.articleBody > h1 {
+    margin-bottom: 1em;
+}
+
+.articleBody > h2 {
+    margin-bottom: 0.5em;
+}

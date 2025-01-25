@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 
 :root {
   --background: #ffffff;
@@ -34,7 +36,6 @@ h1 {
 
 h2 {
   font-size: 1.5em;
-  color: red;
 }
 
 h3 {
@@ -55,11 +56,25 @@ h6 {
 
 p {
   font-family: var(--font-nunito-sans);
+  text-align: justify;
 }
 
 a {
   font-family: var(--font-nunito-sans);
 }
 
+ul {
+  list-style:disc;
+  padding-left: 1.5em;
+ 
+}
 
+ol {
+  list-style:decimal;
+  padding-left: 1.5em;
+}
 
+li {
+  padding-left: 0.5em;
+  padding-bottom: 0.2em;
+}
