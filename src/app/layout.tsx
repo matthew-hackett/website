@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Nunito_Sans } from "next/font/google";
 import "@/app/globals.css";
 import 'katex/dist/katex.min.css'
-
+import './code_theme.css'
 
 import Header from "@/components/core/header/Header";
 

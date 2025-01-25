@@ -1,5 +1,6 @@
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeStarryNight from 'rehype-starry-night';
 import createMDX from '@next/mdx'
 import nextMDX from '@next/mdx';
 
@@ -15,7 +16,7 @@ export default nextMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypeStarryNight],
   },
 })(nextConfig);
 
