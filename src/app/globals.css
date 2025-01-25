@@ -78,3 +78,9 @@ li {
   padding-left: 0.5em;
   padding-bottom: 0.2em;
 }
+
+iframe {
+
+  display: block;      /* Make the iframe behave like a block element */
+  margin: 0 auto;      /* Center the iframe horizontally */
+}

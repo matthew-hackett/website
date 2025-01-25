@@ -1,8 +1,12 @@
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeStarryNight from 'rehype-starry-night';
-import createMDX from '@next/mdx'
+import fauxRemarkEmbedder from '@remark-embedder/core';
+import fauxOembedTransformer from '@remark-embedder/transformer-oembed';
 import nextMDX from '@next/mdx';
+
+const remarkEmbedder = fauxRemarkEmbedder.default;
+const oembedTransformer = fauxOembedTransformer.default;
 
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
@@ -15,12 +19,15 @@ const nextConfig = {
 export default nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [
+      remarkMath,
+      [
+        remarkEmbedder,
+        {
+          transformers: [oembedTransformer], // OEmbed transformer for embedding
+        },
+      ],
+    ],
     rehypePlugins: [rehypeKatex, rehypeStarryNight],
   },
 })(nextConfig);
-
-/*
-// Use MDX configuration with Next.js config
-export default nextConfig;
-*/
