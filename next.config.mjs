@@ -16,6 +16,17 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
+const handleHTML = (html, info) => {
+  const {url, transformer} = info
+  if (
+    transformer.name === '@remark-embedder/transformer-oembed' ||
+    url.includes('youtube.com')
+  ) {
+    return `<div class="embed-youtube aspect-w-16 aspect-h-9">${html}</div>`
+  }
+  return html
+}
+
 export default nextMDX({
   extension: /\.mdx?$/,
   options: {
@@ -25,6 +36,7 @@ export default nextMDX({
         remarkEmbedder,
         {
           transformers: [oembedTransformer], // OEmbed transformer for embedding
+          handleHTML: handleHTML
         },
       ],
     ],

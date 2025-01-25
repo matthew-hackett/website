@@ -83,4 +83,5 @@ iframe {
 
   display: block;      /* Make the iframe behave like a block element */
   margin: 0 auto;      /* Center the iframe horizontally */
+  max-width: 100% !important;
 }
