@@ -16,6 +16,7 @@
     "@remark-embedder/transformer-oembed": "^5.0.1",
     "@types/mdx": "^2.0.13",
     "@wooorm/starry-night": "^3.6.0",
+    "date-fns": "^4.1.0",
     "esbuild": "^0.24.2",
     "mdx-bundler": "^10.0.3",
     "next": "15.1.5",

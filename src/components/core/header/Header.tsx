@@ -8,10 +8,12 @@ export default function Header({}: Props) {
     return (
         <header className={styles.container}>
             <div className={styles.navbar}>
+                <div className={styles.logoDiv}>
                 <Link href="/" className={styles.link}><img
                     className={styles.logo}
-                    src="/images/logo.svg"
+                    src="/static/images/logo.svg"
                 /></Link>
+                </div>
                 
                 <nav>
                     <ul>
@@ -25,20 +27,20 @@ export default function Header({}: Props) {
                         </li>
                         <li>
                             <Link
-                                href="/"
+                                href="/articles"
                                 className={styles.link}
                             >
                                 <span>
-                                    About
+                                    Articles
                                 </span>
                             </Link>
                         </li>
                         <li>
                             <Link
-                                href="/"
+                                href="/puzzles"
                                 className={styles.link}
                             >
-                                <span>Contact</span>
+                                <span>Puzzles</span>
                             </Link>
                         </li>
                     </ul>

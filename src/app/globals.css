@@ -85,3 +85,7 @@ iframe {
   margin: 0 auto;      /* Center the iframe horizontally */
   max-width: 100% !important;
 }
+
+span {
+  font-family: var(--font-nunito-sans);
+}
