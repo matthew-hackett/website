@@ -13,20 +13,39 @@ export default function Header({}: Props) {
     return (
         <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <Link
+                        href="/"
+                        className="btn btn-ghost"
+                    >
+                        <img
+                            className={styles.logo}
+                            src="/static/images/logo.svg"
+                        />
+                    </Link>
   </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Link</a></li>
+  <div className="flex-none p">
+    <ul className="menu menu-horizontal">
+      <li><Link href="/">Projects</Link></li>
       <li>
         <details>
-          <summary>Parent</summary>
+          <summary>Articles</summary>
           <ul className="bg-base-100 rounded-t-none p-2">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
+            <li><Link href="/">Math</Link></li>
+            <li><Link href="/">Computer Science</Link></li>
           </ul>
         </details>
       </li>
+      {/*
+      <li>
+        <details>
+          <summary>Puzzles</summary>
+          <ul className="bg-base-100 rounded-t-none p-2">
+            <li><Link href="/">Link 1</Link></li>
+            <li><Link href="/">Link 1</Link></li>
+          </ul>
+        </details>
+      </li>
+      */}
     </ul>
   </div>
 </div>
