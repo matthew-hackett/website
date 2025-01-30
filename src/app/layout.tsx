@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import { Manrope, Nunito_Sans } from "next/font/google";
 import "@/app/globals.css";
-import 'katex/dist/katex.min.css'
-import './code_theme.css'
+import "katex/dist/katex.min.css";
+import "./code_theme.css";
 
+import MDXClientProvider from "@/components/mdx/MDXClientProvider"; // Import Client Component
 import Header from "@/components/core/header/Header";
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-})
+});
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,16 +24,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      
-      <body
-        className={`${manrope.variable} ${nunitoSans.variable} antialiased`}
-      >
-        {children}
+      <body className={`${manrope.variable} ${nunitoSans.variable} antialiased`}>
+        <MDXClientProvider> {/* Wrap children inside Client Provider */}
+          {children}
+        </MDXClientProvider>
       </body>
     </html>
   );
