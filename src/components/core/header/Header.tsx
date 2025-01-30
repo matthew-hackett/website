@@ -4,9 +4,34 @@ import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
 
+
+
 type Props = {};
 
 export default function Header({}: Props) {
+
+    return (
+        <div className="navbar bg-base-100">
+  <div className="flex-1">
+    <a className="btn btn-ghost text-xl">daisyUI</a>
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+      <li><a>Link</a></li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul className="bg-base-100 rounded-t-none p-2">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
+    )
+    /*
     const [menuOn, setMenuOn] = useState(false);
     const [menuClass, setMenuClass] = useState("");
     const [iconClass, setIconClass] = useState("");
@@ -60,7 +85,6 @@ export default function Header({}: Props) {
                             </Link>
                         </li>
 
-                        {/* DROPDOWN 1 */}
                         <li className={styles.dropdownItem}>
                             <div className={styles.navLink}>
                                 Blog <img className={styles.dropdownArrow} src="/static/images/arrow-down-s-line.svg"></img>
@@ -94,7 +118,6 @@ export default function Header({}: Props) {
                             </ul>
                         </li>
 
-                        {/* DROPDOWN 2 */}
                         <li className={styles.dropdownItem}>
                             <div className={styles.navLink}>
                                 Puzzles <img className={styles.dropdownArrow} src="/static/images/arrow-down-s-line.svg"></img>
@@ -132,4 +155,5 @@ export default function Header({}: Props) {
         </header>
         </>
     );
+    */
 }
