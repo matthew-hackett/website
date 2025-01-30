@@ -2,6 +2,7 @@ import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import "@/app/globals.css";
 import type { MDXComponents } from "mdx/types";
+import PuzzleLink from "./components/PuzzleLink";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -101,6 +102,7 @@ export function useMDXComponents(other: MDXComponents): MDXComponents {
                 {...props}
             />
         ),
+        PuzzleLink,
         ...other,
     };
 }
