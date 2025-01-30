@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
-
+import "@/app/globals.css"
 
 
 type Props = {};
@@ -11,7 +11,7 @@ type Props = {};
 export default function Header({}: Props) {
 
     return (
-        <div className="navbar bg-base-100">
+        <div className={`navbar bg-base-100 ${styles.header}`}>
   <div className="flex-1">
     <Link
                         href="/"
@@ -23,15 +23,15 @@ export default function Header({}: Props) {
                         />
                     </Link>
   </div>
-  <div className="flex-none p">
+  <div className={`flex-none`}>
     <ul className="menu menu-horizontal">
-      <li><Link href="/">Projects</Link></li>
+      <li><Link href="/extra/projects" className="bigLink">projects</Link></li>
       <li>
         <details>
-          <summary>Articles</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><Link href="/">Math</Link></li>
-            <li><Link href="/">Computer Science</Link></li>
+          <summary className="bigLink">articles</summary>
+          <ul className="bg-base-100 rounded-t-none dropdown dropdown-end">
+            <li><Link href="/articles/math" className="smallLink">math</Link></li>
+            <li><Link href="/articles/compsci" className="smallLink">comp sci</Link></li>
           </ul>
         </details>
       </li>

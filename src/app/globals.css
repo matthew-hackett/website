@@ -102,6 +102,18 @@ a {
   font-family: var(--font-nunito-sans);
 }
 
+.bigLink {
+  font-family: var(--font-nunito-sans);
+  font-weight: 600;
+  font-size: 1.17em;
+}
+
+.smallLink {
+  font-family: var(--font-nunito-sans);
+  font-weight: 300;
+  font-size: 1.17em;
+}
+
 ul {
   list-style:disc;
   padding-left: 1.5em;
@@ -130,7 +142,7 @@ span {
 }
 
 
-a::after {
+.underlineLink::after {
   content: '';
   border-bottom: 3px double rgb(214, 207, 113);
   width: 0;
@@ -144,7 +156,7 @@ a::after {
   transition: .2s linear;
 }
 
-a:hover::after {
+.underlineLink:hover::after {
   visibility: visible;
   opacity: 0.7;
   width: 90%;
