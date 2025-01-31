@@ -38,8 +38,6 @@ export function useMDXComponents(other: MDXComponents): MDXComponents {
         em: (props: ComponentPropsWithoutRef<"em">) => <em {...props} />,
         strong: (props: ComponentPropsWithoutRef<"strong">) => <strong {...props} />,
         a: ({ href, children, ...props }: AnchorProps) => {
-            return <a>bad</a>
-            /*
             if (href?.startsWith("/")) {
                 return (
                     <Link
@@ -56,7 +54,6 @@ export function useMDXComponents(other: MDXComponents): MDXComponents {
                     <a
                         href={href}
                         {...props}
-                        className="underlineLink"
                     >
                         {children}
                     </a>
@@ -68,11 +65,10 @@ export function useMDXComponents(other: MDXComponents): MDXComponents {
                     target="_blank"
                     rel="noopener noreferrer"
                     {...props}
-                    className="underlineLink"
                 >
                     {children}
                 </a>
-            );*/
+            );
         },
         
         Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
