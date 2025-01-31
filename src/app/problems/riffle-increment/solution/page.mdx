@@ -1,0 +1,19 @@
+
+import Authorship from "@/components/core/authorship/Authorship";
+
+<Authorship author="Elliott Price" file="elliott" date="30/01/2025" />
+
+# Solution to the <PuzzleLink>Riffle-Increment Sequence</PuzzleLink> problem
+
+Firstly, we know that $f$ is a bijective function, since we can easily find an inverse: subtract one, split the digits and then interleave them. The important thing about this what it implies about loops: if I have a sequence $a_{0}, a_{1}, a_{2}, \dots, a_{n} $, then $f(a_{n})$ cannot be any term of the sequence, except possibly the very first one. Suppose it was: then we would have $f(a_{n}) = a_{k}$ for some $0 < k < n$. Since $f$ is a bijection, this would have to imply that $a_{k-1} = a_{n}$, which is a contradiction. Hence, the only way for a sequence to loop is for it to rejoin the very first term in the sequence.
+
+Next, consider that the length of digits of each $a_{n}$ is non-decreasing. Note also that $f(9) = 10$, for example. Since it is impossible to get from 10 back to 9, due to length having to decrease, the sequence $9, 10, f(10), \dots$ can never loop, and since there's only finitely many integers in each length group, this sequence must diverge.
+
+Hence, for any given choice of $a_{n}$, we simply calculate the sequence (forward or backwards) until the length changes, or it loops.
+
+### Remarks
+This proof is nice because the framework can be applied to many other functions of the same form. The base does not have to be base 10, and the function can be any bijective function, as long as you can find two points you can prove cannot lie on a loop.
+
+The sequence starting at $a_{0} = 1$ is the unique infinite sequence. We can see this by noting that to increase the amount of digits, you must apply $f$ to a number of the form $10^{n} -1$. Since there is only one of these numbers in each length group, every term not on the unique infinite sequence cannot diverge, and cannot join the infinite sequence, and hence must loop. 
+
+*Credit to kyle1117 for the basis of this proof when I first asked this question <a href='https://math.stackexchange.com/questions/4747356/loops-in-a-binary-iterated-function-system'>here.</a>*
