@@ -13,8 +13,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        mono: ['var(--font-roboto-mono)'],   
+        manrope: ['var(--font-manrope)'],
+        nunito: ['var(--font-nunito-sans)'],   
       },
     },
   },
